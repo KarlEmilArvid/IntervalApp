@@ -9,42 +9,65 @@
 </head>
 <body>
     <main>
-        <div class="loading"></div>
-        <section>
-            <nav class="nav">
-                <div>Analog timer</div>
-                <div>Digital timer</div>
-                <div>Visual timer</div>
-                <div>Text timer</div>
-                <div>Circles timer</div>
-            </nav>
-            <section class="pick-time">
-                <button></button>
-                <p>10 minutes</p>
-                <button></button>
+        <header class="loading">
+            <section class="loading-logo">
+                <article class="logo">
+                    <div class="logo-item"></div>
+                    <div class="logo-item"></div>
+                    <div class="logo-item"></div>
+                    <div class="logo-item"></div>
+                </article>
+                <h2>INTERVAL</h2>
+                <h3>For all your timing needs</h3>
             </section>
+        </header>
+        <div class="menu-btn hidden">
+            <div class="menu-item"></div>
+            <div class="menu-item"></div>
+            <div class="menu-item"></div>
+            <div class="menu-item"></div>
+        </div>
+        <nav class="nav">
+            <ul class="link-container">
+                <li class="link-item">ANALOG TIMER</li>
+                <li class="link-item">DIGITAL TIMER</li>
+                <li class="link-item">VISUAL TIMER</li>
+                <li class="link-item">TEXT TIMER</li>
+                <li class="link-item">CIRCLES TIMER</li>
+            </ul>
+        </nav>
+
+        <div class="hidden">
             <section>
-                <input type="checkbox" id="intervals" name="intervals" checked>
-                <label for="intervals">intervals</label>
-                <input type="checkbox" id="break" name="break">
-                <label for="break">5 min break / interval</label>
+                <section class="pick-time">
+                    <button></button>
+                    <p>10 minutes</p>
+                    <button></button>
+                </section>
+                <section>
+                    <input type="checkbox" id="intervals" name="intervals" checked>
+                    <label for="intervals">intervals</label>
+                    <input type="checkbox" id="break" name="break">
+                    <label for="break">5 min break / interval</label>
+                </section>
+                <button>Start timer</button>
             </section>
-            <button>Start timer</button>
-        </section>
-        <section class="interval-display">
-            <figure class="analog"></figure>
-            <figure class="digital"></figure>
-            <figure class="visual"></figure>
-            <button>Abort timer</button>
-        </section>
-        <section class="alarm-view">
-            <figure class="times-up"></figure>
-            <button>Set new timer</button>
-        </section>
-        <section class="break-view">
-            <figure class="pause"></figure>
-            <button>No pause, go now!</button>
-        </section>
+            <section class="interval-display">
+                <figure class="analog"></figure>
+                <figure class="digital"></figure>
+                <figure class="visual"></figure>
+                <button>Abort timer</button>
+            </section>
+            <section class="alarm-view">
+                <figure class="times-up"></figure>
+                <button>Set new timer</button>
+            </section>
+            <section class="break-view">
+                <figure class="pause"></figure>
+                <button>No pause, go now!</button>
+            </section>
+        </div>
+
     </main>
     <script src="lib/easytimer/dist/easytimer.min.js"></script>
     <script src="index.js"></script>
