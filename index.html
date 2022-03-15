@@ -8,7 +8,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <main>
+        <div class="loading"></div>
+        <section>
+            <nav class="nav">
+                <div>Analog timer</div>
+                <div>Digital timer</div>
+                <div>Visual timer</div>
+                <div>Text timer</div>
+                <div>Circles timer</div>
+            </nav>
+            <section class="pick-time">
+                <button></button>
+                <p>10 minutes</p>
+                <button></button>
+            </section>
+            <section>
+                <input type="checkbox" id="intervals" name="intervals" checked>
+                <label for="intervals">intervals</label>
+                <input type="checkbox" id="break" name="break">
+                <label for="break">5 min break / interval</label>
+            </section>
+            <button>Start timer</button>
+        </section>
+        <section class="interval-display">
+            <figure class="analog"></figure>
+            <figure class="digital"></figure>
+            <figure class="visual"></figure>
+            <button>Abort timer</button>
+        </section>
+        <section class="alarm-view">
+            <figure class="times-up"></figure>
+            <button>Set new timer</button>
+        </section>
+        <section class="break-view">
+            <figure class="pause"></figure>
+            <button>No pause, go now!</button>
+        </section>
+    </main>
     <script src="lib/easytimer/dist/easytimer.min.js"></script>
     <script src="index.js"></script>
 </body>
