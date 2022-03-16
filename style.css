@@ -1,11 +1,11 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
   width: 100vw;
   height: 100vh;
-  margin: 0;
 }
 
 main {
@@ -59,7 +59,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    position: fixed;
+    position: absolute;
     top: 1rem;
     left: 1rem;
 }
@@ -97,9 +97,12 @@ main {
     width: 100%;
     height: 100%;
     background: #000000;
-    transform: translateY(-200%);
+    transform: translateY(-120%);
     z-index: 10;
     transition: all 400ms ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .nav--active {
@@ -124,6 +127,104 @@ main {
     color: #FFFFFF;
     margin-left: 25vw;
 }
+
+/* Set Timer */
+.set-timer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 2rem;
+    font-size: 20px;
+}
+
+.timer-container {
+    width: 100%;
+    text-align: center;
+}
+
+.timer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 5rem;
+    margin-top: 30vh;
+}
+
+.timer .material-icons {
+    font-size: 5rem;
+    margin-top: 1rem;
+}
+
+.time-unit {
+    margin-top: 0;
+}
+
+#breaks {
+    margin-top: 1rem;
+}
+
+.checkbox-container {
+    width: 100%;
+}
+
+.interval-checkbox {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    letter-spacing: 0.1em;
+    position: relative;
+}
+
+input[type=checkbox] {
+    height: 20px;
+    width: 20px;
+    margin-right: 1rem;
+    visibility: hidden;
+}
+
+.interval-checkbox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.checked-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: #000000;
+    color: #FFF;
+    border-radius: 4px;
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ .checked-icon {
+    display: block;
+}
+
+#timer-start {
+    background: transparent;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 24px;
+    padding: .7rem;
+    width: 100%;
+    transition: all 300ms;
+}
+
+#timer-start:active {
+    background: steelblue;
+}
+
 
 
 .hidden {

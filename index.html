@@ -5,10 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
+        <nav class="nav">
+            <ul class="link-container">
+                <li class="link-item">ANALOG TIMER</li>
+                <li class="link-item">DIGITAL TIMER</li>
+                <li class="link-item">VISUAL TIMER</li>
+                <li class="link-item">TEXT TIMER</li>
+                <li class="link-item">CIRCLES TIMER</li>
+            </ul>
+        </nav>
         <header class="loading">
             <section class="loading-logo">
                 <article class="logo">
@@ -27,31 +37,34 @@
             <div class="menu-item"></div>
             <div class="menu-item"></div>
         </div>
-        <nav class="nav">
-            <ul class="link-container">
-                <li class="link-item">ANALOG TIMER</li>
-                <li class="link-item">DIGITAL TIMER</li>
-                <li class="link-item">VISUAL TIMER</li>
-                <li class="link-item">TEXT TIMER</li>
-                <li class="link-item">CIRCLES TIMER</li>
-            </ul>
-        </nav>
+        <section class="set-timer hidden">
+            <article class="timer-container">
+                <div class="timer">
+                    <span class="material-icons" id="reduce-time" >chevron_left</span>
+                    <h1 id="chosen-time"></h1>
+                    <span class="material-icons" id="increase-time">chevron_right</span>
+                </div>
+                <p class="time-unit">minutes</p>
+            </article>
 
-        <div class="hidden">
-            <section>
-                <section class="pick-time">
-                    <button></button>
-                    <p>10 minutes</p>
-                    <button></button>
-                </section>
-                <section>
-                    <input type="checkbox" id="intervals" name="intervals" checked>
+            <section class="checkbox-container">
+                <article class="interval-checkbox" id="interval">
+                    <input type="checkbox" id="intervals" name="intervals">
                     <label for="intervals">intervals</label>
+                    <span class="material-icons checked-icon">close</span>
+                </article>
+                <article class="interval-checkbox" id="breaks">
                     <input type="checkbox" id="break" name="break">
                     <label for="break">5 min break / interval</label>
-                </section>
-                <button>Start timer</button>
+                    <span class="material-icons checked-icon">close</span>
+                </article>
             </section>
+
+            <button id="timer-start">START TIMER</button>
+        </section>
+
+        <div class="hidden">
+
             <section class="interval-display">
                 <figure class="analog"></figure>
                 <figure class="digital"></figure>
