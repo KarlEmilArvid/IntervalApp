@@ -252,10 +252,6 @@ input[type="checkbox"]:checked ~ .checked-icon {
     margin: 2rem;
 }
 
-.times-up {
-    margin-top: 22rem;
-}
-
 .timer-button {
     color: gray;
     background-color: transparent;
@@ -269,6 +265,7 @@ input[type="checkbox"]:checked ~ .checked-icon {
 }
 
 .times-up {
+    margin-top: 22rem;
     width: 40%;
     display: flex;
     align-items: center;
@@ -295,9 +292,6 @@ input[type="checkbox"]:checked ~ .checked-icon {
 
 .pause {
     margin-top: 20rem;
-}
-
-.pause {
     width: 40%;
     display: flex;
     align-items: center;
