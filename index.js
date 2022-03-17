@@ -5,8 +5,7 @@ var timer = new Timer();
 
 
 timer.addEventListener('secondsUpdated', () => {
-    timerElem.innerHTML = timer.getTimeValues().toString();
-    console.log(timer.getTimeValues());
+    timerElem.innerHTML = timer.getTimeValues().toString(['minutes', 'seconds']);
 });
 
 function startTimer() {
