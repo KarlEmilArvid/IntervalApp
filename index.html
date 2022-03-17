@@ -5,46 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
-        <div class="loading"></div>
-        <section>
-            <nav class="nav">
-                <div>Analog timer</div>
-                <div>Digital timer</div>
-                <div>Visual timer</div>
-                <div>Text timer</div>
-                <div>Circles timer</div>
-            </nav>
-            <section class="pick-time">
-                <button></button>
-                <p class="setTimer" id="chosen-time">10</p>
-                <button></button>
+        <nav class="nav">
+            <ul class="link-container">
+                <li class="link-item">ANALOG TIMER</li>
+                <li class="link-item">DIGITAL TIMER</li>
+                <li class="link-item">VISUAL TIMER</li>
+                <li class="link-item">TEXT TIMER</li>
+                <li class="link-item">CIRCLES TIMER</li>
+            </ul>
+        </nav>
+      
+        <header class="loading">
+            <section class="loading-logo">
+                <article class="logo">
+                    <div class="logo-item"></div>
+                    <div class="logo-item"></div>
+                    <div class="logo-item"></div>
+                    <div class="logo-item"></div>
+                </article>
+                <h2>INTERVAL</h2>
+                <h3>For all your timing needs</h3>
             </section>
-            <section>
-                <input type="checkbox" id="intervals" name="intervals" checked>
-                <label for="intervals">intervals</label>
-                <input type="checkbox" id="break" name="break">
-                <label for="break">5 min break / interval</label>
+        </header>
+      
+        <div class="menu-btn hidden">
+            <div class="menu-item"></div>
+            <div class="menu-item"></div>
+            <div class="menu-item"></div>
+            <div class="menu-item"></div>
+        </div>
+      
+        <section class="set-timer hidden">
+            <article class="timer-container">
+                <div class="timer">
+                    <span class="material-icons" id="reduce-time" >chevron_left</span>
+                    <h1 id="chosen-time"></h1>
+                    <span class="material-icons" id="increase-time">chevron_right</span>
+                </div>
+                <p class="time-unit">minutes</p>
+            </article>
+
+            <section class="checkbox-container">
+                <article class="interval-checkbox" id="interval">
+                    <input type="checkbox" id="intervals" name="intervals">
+                    <label for="intervals">intervals</label>
+                    <span class="material-icons checked-icon">close</span>
+                </article>
+                <article class="interval-checkbox" id="breaks">
+                    <input type="checkbox" id="break" name="break">
+                    <label for="break">5 min break / interval</label>
+                    <span class="material-icons checked-icon">close</span>
+                </article>
             </section>
-            <button id="timer-start" onclick="startTimer()">Start timer</button>
-        </section>
+
         <section class="interval-display">
             <figure class="analog"></figure>
             <figure class="digital"></figure>
             <figure class="visual"></figure>
             <button>Abort timer</button>
         </section>
-        <section class="alarm-view">
-            <figure class="times-up"></figure>
-            <button>Set new timer</button>
-        </section>
-        <section class="break-view">
-            <figure class="pause"></figure>
-            <button>No pause, go now!</button>
-        </section>
+
+        <div class="hidden">
+            <section class="alarm-view">
+                <figure class="times-up"><img src="images/alarm icon.svg" alt=""></figure>
+                <h2>Times up!</h2>
+                <button class="timer-button">SET NEW TIMER</button>
+            </section>
+            <section class="break-view">
+                <figure class="pause"><img src="images/pause icon.svg" alt=""></figure>
+                <h2>Pause & breath</h2>
+                <p>3:37</p>
+                <button class="pause-button">NO PAUSE, GO NOW!</button>
+            </section>
+        </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/src/easytimer.min.js"></script>
