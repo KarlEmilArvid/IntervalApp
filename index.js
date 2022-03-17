@@ -1,3 +1,29 @@
+const timerElem = document.querySelector('.setTimer');
+const startButtonElem = document.querySelector('#timer-start');
+const timerInputElem = document.querySelector('#chosen-time');
+const loadingButton = document.querySelector('.loading-logo');
+const setTimerElem = document.querySelector('.set-timer');
+var timer = new Timer();
+
+
+
+timer.addEventListener('secondsUpdated', () => {
+    timerElem.innerHTML = timer.getTimeValues().toString(['minutes', 'seconds']);
+});
+
+function startTimer() {
+    const startTime = getTimerInput();
+    timer.start({countdown: true, startValues: {minutes: startTime}});   
+    console.log("clicked on start"); 
+}
+
+function getTimerInput() {
+    const startTime = parseInt(timerInputElem.innerHTML);
+    console.log("startTime: ", startTime);
+    return startTime;
+}
+
+
 // Timer
 // const countdownElem = document.querySelector('#countdown');
 // const timer = new easytimer.Timer({ countdown: true, startValues: { seconds: 5 } });
@@ -14,8 +40,6 @@
 
 
 
-const loadingButton = document.querySelector('.loading-logo');
-const setTimerElem = document.querySelector('.set-timer');
 loadingButton.addEventListener('click', () => {
     const loadingElem = document.querySelector('.loading');
     loadingElem.classList.add('hidden');
@@ -23,7 +47,6 @@ loadingButton.addEventListener('click', () => {
     setTimerElem.classList.toggle('hidden');
     setTimer(chosenTime);
 });
-
 
 const navBtn = document.querySelector('.menu-btn'); 
 const navElem = document.querySelector('.nav');
@@ -44,23 +67,3 @@ increaseTimeBtn.addEventListener('click', () => {
     chosenTime++; 
     setTimer(chosenTime);
 })
-
-let chosenTimeElem = document.querySelector('#chosen-time');
-let chosenTime = 10;
-
-function setTimer(chosenTime) {
-
-    chosenTimeElem.innerHTML = chosenTime;
-}
-
-
-
-
-const timerButton = document.querySelector('#timer-start');
-timerButton.addEventListener('click', () => {
-    /*
-    timern in här, ta ifrån beroende på värde i chosenTime variablen
-    beroende på checkade checkboxes hämta funktioner de hör till
-    */
-    setTimerElem.classList.toggle('hidden');
-});
