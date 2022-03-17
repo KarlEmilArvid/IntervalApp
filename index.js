@@ -1,20 +1,22 @@
 const timerElem = document.querySelector('.setTimer');
-//const timerInputElem = document.querySelector('#chosen-time');
-timerInputElem = "5"; // placeholder value 
-
+const startButtonElem = document.querySelector('#timer-start');
+const timerInputElem = document.querySelector('#chosen-time');
 var timer = new Timer();
 
-console.log('timer: ', timer);
 
-setTimer();
+timer.addEventListener('secondsUpdated', () => {
+    timerElem.innerHTML = timer.getTimeValues().toString();
+    console.log(timer.getTimeValues());
+});
 
-function setTimer() {
-    timer.start({countdown: true, startValues: getTimerInput()});
-    
+function startTimer() {
+    const startTime = getTimerInput();
+    timer.start({countdown: true, startValues: {minutes: startTime}});   
+    console.log("clicked on start"); 
 }
 
-
 function getTimerInput() {
-    const timerValue = parseInt(timerInputElem);
-    return `minutes: ${timerValue}`;
+    const startTime = parseInt(timerInputElem.innerHTML);
+    console.log("startTime: ", startTime);
+    return startTime;
 }

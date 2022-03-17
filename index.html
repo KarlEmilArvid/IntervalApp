@@ -20,7 +20,7 @@
             </nav>
             <section class="pick-time">
                 <button></button>
-                <p>10 minutes</p>
+                <p class="setTimer" id="chosen-time">10</p>
                 <button></button>
             </section>
             <section>
@@ -29,7 +29,7 @@
                 <input type="checkbox" id="break" name="break">
                 <label for="break">5 min break / interval</label>
             </section>
-            <button>Start timer</button>
+            <button id="timer-start" onclick="startTimer()">Start timer</button>
         </section>
         <section class="interval-display">
             <figure class="analog"></figure>
